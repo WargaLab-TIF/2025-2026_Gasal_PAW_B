@@ -31,4 +31,3 @@ echo "<br>";
 
 sort($merged);
 var_dump($merged);
-

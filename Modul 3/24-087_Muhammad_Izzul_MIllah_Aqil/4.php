@@ -3,11 +3,11 @@ $height = array(
   "Andy"=>"176",
   "Barry"=>"165",
   "Charlie"=>"170",
-  "Diana"=>"160",
-  "Evelyn"=>"155",
-  "Frank"=>"168",
-  "George"=>"174",
-  "Hannah"=>"162"
+  "izzul"=>"160",
+  "verdi"=>"155",
+  "zaki"=>"168",
+  "rafi"=>"174",
+  "zaidan"=>"162"
 );
 
 foreach($height as $x => $x_value) {

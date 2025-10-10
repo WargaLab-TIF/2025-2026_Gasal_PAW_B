@@ -20,4 +20,3 @@ for ($row = 0; $row < count($students); $row++) {
     echo "</tr>";
 }
 echo "</table>";
-

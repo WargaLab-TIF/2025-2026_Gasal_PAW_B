@@ -1,7 +1,4 @@
 <?php
-// nomer 1
-
-echo "nomer 1 <br>";
 
 $fruits = array("Avocado", "Blueberry", "Cherry");
 
@@ -16,10 +13,6 @@ echo "<br>Indeks tertinggi: " . $Indexterakhir;
 echo "<br>";
 echo "<br>";
 
-// 2
-
-echo "nomer 2 <br>";
-
 unset($fruits[2]); 
 $fruits = array_values($fruits);
 
@@ -31,9 +24,6 @@ echo "<br>Indeks tertinggi: " . $indextrkhr;
 
 echo "<br><br>";
 
-// 3
-
-echo "nomer 3 <br>";
 
 $vegies = array("wortel", "bayam", "brokoli");
 

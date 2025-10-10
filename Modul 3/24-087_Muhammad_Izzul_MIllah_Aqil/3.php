@@ -14,5 +14,5 @@ unset($height["Barry"]);
 $keys = array_keys($height);
 echo "Setelah dihapus, key terakhir: " . end($keys) . "<br>";
 
-$weight = array("Andy"=>65, "Barry"=>70, "Charlie"=>68);
+$weight = array("Andy"=>165, "Barry"=>170, "Charlie"=>168);
 echo "Data kedua dari array weight: " . $weight["Barry"];

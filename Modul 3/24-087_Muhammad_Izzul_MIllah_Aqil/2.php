@@ -1,5 +1,5 @@
 <?php
-$fruits = array("Avocado", "Blueberry", "Cherry", "Durian", "Mango", "Apple", "Pear", "Watermelon");
+$fruits = array("alpukat", "Blueberry", "Ceri", "Durian", "Mangga", "Apel", "Pear", "");
 $arrlength = count($fruits);
 
 
