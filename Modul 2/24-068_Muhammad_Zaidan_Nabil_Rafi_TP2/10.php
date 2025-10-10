@@ -34,5 +34,5 @@ do {
 
 echo "============================\n";
 echo "TOTAL BAYAR: Rp $total\n";
-echo "Terima kasih sudah belanja!\n";
+echo "Terima kasih sudah belanja!\n";
 ?>

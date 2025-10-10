@@ -8,6 +8,6 @@ if ($umur < 12) {
 } elseif ($umur < 60) {
     echo "Dewasa";
 } else {
-    echo "Lansia";
+    echo "Lansia";
 }
 ?>
