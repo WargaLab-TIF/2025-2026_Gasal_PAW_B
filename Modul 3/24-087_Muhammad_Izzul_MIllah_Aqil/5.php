@@ -1,4 +1,6 @@
 <?php
+// 1
+
 $students = array(
     array("Alex","220401","0812345678"),
     array("Bianca","220402","0812345687"),
@@ -9,6 +11,8 @@ $students = array(
     array("zaki","240407","0812345644"),
     array("rafi","240408","0812345655")
 );
+
+// 2
 
 echo "<table border='1' cellpadding='5'>";
 echo "<tr><th>Name</th><th>NIM</th><th>Mobile</th></tr>";

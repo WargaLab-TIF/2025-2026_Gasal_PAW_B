@@ -1,4 +1,5 @@
 <?php
+// 1
 
 $fruits = array("Avocado", "Blueberry", "Cherry");
 
@@ -13,6 +14,8 @@ echo "<br>Indeks tertinggi: " . $Indexterakhir;
 echo "<br>";
 echo "<br>";
 
+// 2
+
 unset($fruits[2]); 
 $fruits = array_values($fruits);
 
@@ -24,6 +27,7 @@ echo "<br>Indeks tertinggi: " . $indextrkhr;
 
 echo "<br><br>";
 
+// 3
 
 $vegies = array("wortel", "bayam", "brokoli");
 
@@ -31,5 +35,6 @@ echo "<br>Data sayuran:<br>";
 foreach ($vegies as $veg) {
     echo $veg . "<br>";
 }
+
 
 
