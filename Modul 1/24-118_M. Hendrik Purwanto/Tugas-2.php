@@ -6,6 +6,6 @@
     <title>Document</title>
 </head>
 <body>
-    <h2><? echo "hello World"; ?></h2>
+    <h2>Hello  World</h2>
 </body>
 </html>

@@ -7,9 +7,13 @@ array_push($fruits, "Mangoo", "Durian", "Nangka", "Banana", "Aple");
 echo "<br>";
 var_dump($fruits);
 echo "<hr>";
+
+
 unset($fruits[3]);
 echo "<br>";
 var_dump($fruits);
+
+//soalsub3
 
 $vegies = ["Wortel", "Brokoli", "Asparagus"];
 echo "<br>";
