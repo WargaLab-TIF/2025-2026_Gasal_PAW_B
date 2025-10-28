@@ -2,33 +2,37 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <title>Validasi Server-side - Data Mahasiswa</title>
+    <title>Form Data Mahasiswa</title>
 </head>
 <body>
-    <h2>Form Input Data Mahasiswa</h2>
+    <h2>Data Mahasiswa</h2>
 
     <?php
     require 'validate.inc';
     $errors = [];
 
-    if ($_SERVER["REQUEST_METHOD"] === "POST") {
+    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         validateName($errors, $_POST, 'nama');
-        validateEmail($errors, $_POST, 'email');
         validateNIM($errors, $_POST, 'nim');
-        validateTanggal($errors, $_POST, 'tgl_lahir');
+        validateEmail($errors, $_POST, 'email');
         validatePassword($errors, $_POST, 'password');
+        validateTanggal($errors, $_POST, 'tanggal');
         validateIPK($errors, $_POST, 'ipk');
 
-        if (empty($errors)) {
-            echo "<h3 style='color:green;'>Data berhasil disubmit tanpa error!</h3>";
-            echo "<b>Nama:</b> " . htmlspecialchars($_POST['nama']) . "<br>";
-            echo "<b>Email:</b> " . htmlspecialchars($_POST['email']) . "<br>";
-            echo "<b>NIM:</b> " . htmlspecialchars($_POST['nim']) . "<br>";
-            echo "<b>Tanggal Lahir:</b> " . htmlspecialchars($_POST['tgl_lahir']) . "<br>";
-            echo "<b>IPK:</b> " . htmlspecialchars($_POST['ipk']) . "<br>";
-        } else {
-            echo "<h3 style='color:red;'>Terdapat kesalahan input:</h3>";
+        if ($errors) {
+            echo "<h3 style='color:red;'>Periksa kembali input berikut:</h3><ul>";
+            foreach ($errors as $msg) {
+                echo "<li>$msg</li>";
+            }
+            echo "</ul>";
             include 'form.inc';
+        } else {
+            echo "<h3 style='color:green;'>Data berhasil dikirim!</h3>";
+            echo "<p><b>Nama:</b> {$_POST['nama']}</p>";
+            echo "<p><b>NIM:</b> {$_POST['nim']}</p>";
+            echo "<p><b>Email:</b> {$_POST['email']}</p>";
+            echo "<p><b>Tanggal Lahir:</b> {$_POST['tanggal']}</p>";
+            echo "<p><b>IPK:</b> {$_POST['ipk']}</p>";
         }
     } else {
         include 'form.inc';
