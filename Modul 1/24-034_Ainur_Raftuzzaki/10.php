@@ -10,7 +10,7 @@ $hobi = "Bermain game, membaca & Olahraga";
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Biodata</title>
+    <title>Biodata</title>  
     <style>
         table {
             border-collapse: collapse;

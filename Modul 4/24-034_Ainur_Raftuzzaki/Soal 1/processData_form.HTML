@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Data Pribadi</title>
+</head>
+<body>
+    <h2>Form Data Pribadi</h2>
+    <form action="processData.php" method="POST">
+
+        <label for="Nama">Nama:</label><br>
+        <input type="text" id="Nama" name="Nama" required><br><br>
+
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email" required><br><br>
+
+        <label for="password">Password:</label><br>
+        <input type="password" id="password" name="password" required><br><br>
+
+        <label for="Alamat">Alamat:</label><br>
+        <textarea id="Alamat" name="Alamat" rows="3" cols="30"></textarea><br><br>
+
+        <label for="state">State:</label><br>
+        <select id="state" name="state">
+            <option value="New South Wales">New South Wales</option>
+            <option value="Queensland">Queensland</option>
+            <option value="Victoria">Victoria</option>
+            <option value="Western Australia">Western Australia</option>
+        </select><br><br>
+
+        <input type="hidden" name="country" value="Australia">
+
+        <label>Jenis Kelamin:</label><br>
+        <input type="radio" name="Jenis Kelamin" value="Male"> Laki-laki<br>
+        <input type="radio" name="Jenis Kelamin" value="Female"> Perempuan<br><br>
+
+        <label>Vegetarian?</label>
+        <input type="checkbox" name="vegetarian" value="Yes"> Yes<br><br>
+
+        <input type="submit" value="Submit">
+        <input type="reset" value="Reset">
+    </form>
+</body>
+</html>
