@@ -20,7 +20,7 @@ for($x = 0; $x < $arrlength; $x++){
     echo $fruits[$x]."<br>";
 }
 echo "<b>jumlah data sekarang: </b>".count($fruits)-1;
-
+ 
 echo "<br>";
 echo "<br>";
 

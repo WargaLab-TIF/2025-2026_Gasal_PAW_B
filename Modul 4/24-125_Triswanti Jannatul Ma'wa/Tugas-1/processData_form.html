@@ -1,0 +1,52 @@
+<fieldset>
+<legend>Proses details</legend>
+<form action="processData.php" name="myForm" method="post">
+    <div class="field">
+        <label for="username">Username</label>
+        <input type="text" name="username" size="31">
+    </div>
+    <div class="field">
+        <label for="email">Email address</label>
+        <input type="text" name="email" size="31">
+    </div>
+    <div class="field">
+        <label for="password">Password</label>
+        <input type="password" name="password" size="31">
+    </div>
+    <div class="field">
+        <label for="address">Address</label>
+        <textarea name="address" rows="3" cols="22"></textarea>
+    </div>
+    <div class="field">
+        <label for="state">State</label>
+        <select name="state">
+            <option value="-1" selected>[choose your state]</option>
+            <option value="1">Australian Capital Territory</option>
+            <option value="2">Queensland</option>
+            <option value="3">Victoria</option>
+            <option value="4">New South Wales</option>
+            <option value="5">Tasmania</option>
+            <option value="6">South Australias</option>
+            <option value="7">Western Australis</option>
+            <option value="8">Nothern Terriotory</option>
+        </select>
+    </div>
+    <div class="field">
+        <input type="hidden" name="country" value="Australia">
+    </div>
+    <div class="field">
+        <label for="sex">Gender</label>
+        <input type="radio" name="sex" value="male">male
+        <input type="radio" name="sex" value="female">female
+    </div>
+    <div class="field">
+        <label for="vegetarian">Vegetarian?</label>
+        <input type="checkbox" name="vegetarian">
+    </div>
+    <div class="field">
+        <label >&nbsp</label>
+        <input type="submit" name="submit" value="submit">
+        <input type="reset" value="Reset" name="reset">
+    </div>
+</form>
+</fieldset>
