@@ -1,5 +1,4 @@
 <?php
-// Validasi nama (regex)
 function validateName(&$errors, $field_list, $field_name)
 {
     $pattern = "/^[a-zA-Z' -]+$/";
@@ -10,7 +9,6 @@ function validateName(&$errors, $field_list, $field_name)
     }
 }
 
-// Validasi email (filter + regex)
 function validateEmail(&$errors, $field_list, $field_name)
 {
     $email = strtolower(trim($field_list[$field_name] ?? ''));
@@ -23,7 +21,6 @@ function validateEmail(&$errors, $field_list, $field_name)
     }
 }
 
-// Validasi NIM (type testing)
 function validateNIM(&$errors, $field_list, $field_name)
 {
     if (empty($field_list[$field_name])) {
@@ -33,7 +30,6 @@ function validateNIM(&$errors, $field_list, $field_name)
     }
 }
 
-// Validasi Password (panjang + regex)
 function validatePassword(&$errors, $field_list, $field_name)
 {
     $password = $field_list[$field_name] ?? '';
@@ -46,7 +42,6 @@ function validatePassword(&$errors, $field_list, $field_name)
     }
 }
 
-// Validasi IPK (filter + type)
 function validateIPK(&$errors, $field_list, $field_name)
 {
     if (empty($field_list[$field_name])) {
@@ -56,7 +51,6 @@ function validateIPK(&$errors, $field_list, $field_name)
     }
 }
 
-// Validasi tanggal lahir (date)
 function validateTanggal(&$errors, $field_list, $field_name)
 {
     $tgl = $field_list[$field_name] ?? '';
