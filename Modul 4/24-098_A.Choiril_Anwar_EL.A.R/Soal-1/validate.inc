@@ -1,5 +1,5 @@
 <?php
-function validateName($field_list, $field_name)
+function validateName(&$errors, $field_list, $field_name)
 {
     $pattern = "/^[a-zA-Z' -]+$/"; 
 
