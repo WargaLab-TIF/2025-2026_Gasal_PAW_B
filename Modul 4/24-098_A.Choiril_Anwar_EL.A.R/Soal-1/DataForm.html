@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Formulir Data Pribadi</title>
+</head>
+<body>
+    <h2>Formulir Data Pribadi</h2>
+    <form action="processData.php" method="POST">
+        <label>Nama Lengkap:</label><br>
+        <input type="text" name="nama" placeholder="Masukkan nama lengkap" required><br><br>
+        <label>Email:</label><br>
+        <input type="email" name="email" placeholder="nama@email.com" required><br><br>
+        <label>Program Studi:</label><br>
+        <input type="text" name="prodi" placeholder="prodi anda" required><br><br>
+        <label>Alamat:</label><br>
+        <textarea name="alamat" rows="3" cols="30" placeholder="Masukkan alamat lengkap"></textarea><br><br>
+        <label>Provinsi:</label><br>
+        <select name="provinsi">
+            <option value="Jawa Timur">Jawa Timur</option>
+            <option value="Jawa Barat">Jawa Barat</option>
+            <option value="Jawa Tengah">Jawa Tengah</option>
+            <option value="DKI Jakarta">DKI Jakarta</option>
+            <option value="Bali">Bali</option>
+        </select><br><br>
+        <label>Jenis Kelamin:</label><br>
+        <input type="radio" name="gender" value="Laki-laki"> Laki-laki
+        <input type="radio" name="gender" value="Perempuan"> Perempuan<br><br>
+        <label>Apakah Anda Mahasiswa?</label>
+        <input type="checkbox" name="mahasiswa" value="Ya"><br><br>
+        <input type="submit" value="Kirim">
+        <input type="reset" value="Bersihkan">
+    </form>
+</body>
+</html>
