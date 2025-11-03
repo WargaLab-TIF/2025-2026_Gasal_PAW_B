@@ -23,4 +23,3 @@ if(isset($_POST['simpan'])){
 
     echo "<script>alert('Data Tersimpan');document.location='tampilkan data.php'</script>";
 }
-?>

@@ -17,4 +17,3 @@ if (isset($_GET['id'])) {
     echo "<script>alert('ID supplier tidak ditemukan!');
     document.location='tampilkan data.php';</script>";
 }
-?>

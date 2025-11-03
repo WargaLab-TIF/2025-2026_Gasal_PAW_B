@@ -39,7 +39,9 @@ while($d = mysqli_fetch_array($data)){
       <a href="hapus data.php?id=<?php echo $d['id']; ?>" onclick="return confirm('Anda yakin akan menghapus data ini?')">Hapus</a>
   </td>
 </tr>
-<?php } ?>
+<?php } 
+
+?>
 </table>
 
 </body>

@@ -28,4 +28,3 @@ if(isset($_POST['update'])){
         WHERE id='$_GET[id]'");
     echo "<script>alert('Data Terupdate');document.location='tampilkan data.php'</script>";
 }
-?>
