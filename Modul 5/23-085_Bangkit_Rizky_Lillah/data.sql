@@ -24,7 +24,6 @@ INSERT INTO supplier (nama, telp, alamat) VALUES
 ('PT Makmur Abadi', '031555999', 'Probolinggo'),
 ('CV Sumber Rejeki', '031555000', 'Mojokerto');
 
-
 -- Barang
 INSERT INTO barang (kode_barang, nama_barang, harga, stok, supplier_id) VALUES
 ('BR001', 'Mouse Logitech', 120000, 50, 1),
