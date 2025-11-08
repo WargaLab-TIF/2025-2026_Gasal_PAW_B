@@ -1,0 +1,11 @@
+<?php
+$fruits = ["Avocado", "Blueberry", "Cherry"];
+
+array_push($fruits, "Melon", "Mangga", "Anggur", "Jeruk", "Nanas");
+
+
+$arrlengt = count($fruits);
+for($x = 0; $x < $arrlengt; $x++){
+    echo $fruits[$x];
+    echo "<br>";
+}
