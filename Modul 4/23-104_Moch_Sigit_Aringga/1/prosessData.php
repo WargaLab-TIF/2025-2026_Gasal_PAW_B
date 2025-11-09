@@ -11,11 +11,11 @@ if (isset($_POST['surname'])) {
         echo '<h1>Invalid, correct the following errors:</h1>';
         foreach ($errors as $field => $error)
             echo "$field $error</br>";
-        include 'form.inc'; // gunakan include agar form ditampilkan
+        include 'form.inc'; 
     } else {
         echo 'Form submitted successfully with no errors';
     }
 } else {
-    include 'form.inc'; // gunakan include agar form ditampilkan
+    include 'form.inc'; 
 }
 ?>

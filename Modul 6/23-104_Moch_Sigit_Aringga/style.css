@@ -1,0 +1,138 @@
+/* 🌙 Tema Modern Elegan */
+body {
+    font-family: "Segoe UI", sans-serif;
+    margin: 40px auto;
+    max-width: 800px;
+    background-color: #eef2f6;
+    color: #2c3e50;
+}
+
+/* Judul */
+h2, h3 {
+    color: #1a202c;
+    text-align: center;
+}
+
+/* Kotak utama */
+fieldset {
+    border-radius: 12px;
+    border: 1px solid #cbd5e1;
+    padding: 20px;
+    margin-bottom: 20px;
+    background: #ffffff;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    transition: 0.3s;
+}
+
+fieldset:hover {
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* Label dan input */
+label {
+    display: inline-block;
+    width: 160px;
+    font-weight: 600;
+    color: #334155;
+}
+
+input, select {
+    padding: 8px 10px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    font-size: 1em;
+    width: auto;
+    transition: all 0.3s ease;
+}
+
+input:focus, select:focus {
+    border-color: #3b82f6;
+    box-shadow: 0 0 5px rgba(59,130,246,0.3);
+    outline: none;
+}
+
+/* Tombol umum */
+button {
+    cursor: pointer;
+    background-color: #2563eb;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 8px 16px;
+    font-size: 1em;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background-color: #1e40af;
+    transform: scale(1.03);
+}
+
+/* Tombol Hapus */
+.btn_hapus {
+    background-color: #ef4444;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 5px 12px;
+    cursor: pointer;
+    font-size: 0.9em;
+    transition: all 0.3s ease;
+}
+
+.btn_hapus:hover {
+    background-color: #b91c1c;
+    transform: scale(1.05);
+}
+
+/* Tabel */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+th, td {
+    border-bottom: 1px solid #e2e8f0;
+    padding: 12px 10px;
+    text-align: center;
+}
+
+th {
+    background-color: #f8fafc;
+    font-weight: 600;
+    color: #1e293b;
+}
+
+tr:hover {
+    background-color: #f1f5f9;
+}
+
+/* Tombol Simpan */
+.submit-btn {
+    font-size: 1.2em;
+    padding: 12px 24px;
+    border-radius: 10px;
+    background-color: #10b981;
+    color: white;
+    border: none;
+    display: block;
+    margin: 20px auto;
+    transition: all 0.3s ease;
+}
+
+.submit-btn:hover {
+    background-color: #059669;
+    transform: scale(1.05);
+}
+
+/* Garis pemisah */
+hr {
+    border: none;
+    border-top: 2px dashed #cbd5e1;
+    margin: 30px 0;
+}
