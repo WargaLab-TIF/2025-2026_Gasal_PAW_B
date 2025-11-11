@@ -17,4 +17,3 @@ $id_transaksi = simpanTransaksi(
 
 echo "<h2>Data Nota Transaksi Berhasil Disimpan!</h2>";
 tampilTransaksi();
-
