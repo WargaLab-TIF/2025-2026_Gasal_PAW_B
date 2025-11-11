@@ -38,3 +38,4 @@ function simpanTransaksi($tanggal, $pelanggan_id, $kode_barang, $harga, $qty, $k
     return $id_transaksi;
 }
 
+
