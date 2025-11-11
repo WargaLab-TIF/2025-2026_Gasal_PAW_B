@@ -18,7 +18,7 @@
 
 <?php
 if(isset($_POST['simpan'])){
-    mysqli_query($koneksi, "INSERT INTO supplier VALUES('', '$_POST[nama]', '$_POST[telp]', '$_POST[alamat]')");
+mysqli_query($koneksi, "INSERT INTO supplier (nama, telp, alamat) VALUES ('$_POST[nama]', '$_POST[telp]', '$_POST[alamat]')");
     echo "<script>alert('Data Tersimpan');document.location='index.php'</script>";
 }
 ?>
