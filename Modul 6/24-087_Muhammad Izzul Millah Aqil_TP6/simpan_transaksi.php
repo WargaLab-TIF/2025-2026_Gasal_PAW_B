@@ -1,6 +1,6 @@
 <?php
 require_once "fungsi_transaksi.php";
-require_once "tampil_transaksi.php";
+require_once "tampilkan_transaksi.php";
 
 if (empty($_POST['pelanggan_id'])) {
     die("Error: ID pelanggan tidak boleh kosong!");
