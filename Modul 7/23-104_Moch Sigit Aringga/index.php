@@ -4,7 +4,6 @@ require "konek.php";
 $start = isset($_GET['start']) ? $_GET['start'] : '';
 $end   = isset($_GET['end']) ? $_GET['end'] : '';
 
-// Query tabel rekapan (total pendapatan per tanggal)
 if ($start && $end) {
     $query = "SELECT tanggal, SUM(jumlah * harga) AS total
               FROM penjualan
@@ -25,9 +24,6 @@ while ($row = mysqli_fetch_assoc($hasil)) {
     $data[] = $row;
 }
 
-// =======================
-// BUAT DATA UNTUK GRAFIK
-// =======================
 $labels = [];
 $values = [];
 
@@ -36,7 +32,6 @@ foreach ($data as $row) {
     $values[] = (int)$row['total'];
 }
 
-// Hitung total pendapatan dan pelanggan (jika ada filter tanggal)
 if ($start && $end) {
 
     $query_info = "SELECT 
@@ -46,7 +41,6 @@ if ($start && $end) {
                    WHERE tanggal BETWEEN '$start' AND '$end'";
 } else {
 
-    // Tanpa filter tanggal — pelanggan tidak dihitung karena tidak ada kolom id_pelanggan
     $query_info = "SELECT 
                     SUM(jumlah * harga) AS pendapatan
                    FROM penjualan";
