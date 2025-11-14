@@ -33,15 +33,14 @@ foreach ($data as $row) {
 }
 
 if ($start && $end) {
-
     $query_info = "SELECT 
                     COUNT(*) AS pelanggan, 
                     SUM(jumlah * harga) AS pendapatan
                    FROM penjualan
                    WHERE tanggal BETWEEN '$start' AND '$end'";
 } else {
-
     $query_info = "SELECT 
+                    COUNT(*) AS pelanggan,
                     SUM(jumlah * harga) AS pendapatan
                    FROM penjualan";
 }
@@ -49,7 +48,6 @@ if ($start && $end) {
 $info = mysqli_fetch_assoc(mysqli_query($conn, $query_info));
 
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -57,35 +55,84 @@ $info = mysqli_fetch_assoc(mysqli_query($conn, $query_info));
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Data Penjualan</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            background: #f5f5f5;
+        }
+
+        .container {
+            max-width: 950px;
+            margin: 0 auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+
+        th,
+        td {
+            border: 1px solid #ccc;
+            padding: 8px;
+            text-align: center;
+        }
+
+        th {
+            background: #e6f2ff;
+        }
+
+        .btn {
+            padding: 8px 20px;
+            border: none;
+            background: #4CAF50;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .btn-print {
+            background: #ff9800;
+        }
+
+        .btn-excel {
+            background: #2196F3;
+        }
+
+        .btn-area {
+            margin-top: 15px;
+            display: flex;
+            gap: 10px;
+        }
+    </style>
 </head>
 
 <body>
-    <div style="
-        max-width: 900px;
-        margin: 0 auto;
-        padding: 20px;
-    ">
+    <div class="container">
         <form method="GET" style="margin-bottom:20px; display:flex; gap:10px;">
             <input type="date" name="start" value="<?= $start ?>" required>
             <input type="date" name="end" value="<?= $end ?>" required>
-            <button type="submit" style="
-                padding:8px 20px;
-                background:#4CAF50;
-                color:white;
-                border:none;
-                border-radius:5px;
-                cursor:pointer;
-            ">Tampilkan</button>
+            <button type="submit" class="btn">Tampilkan</button>
         </form>
+
+        <div class="btn-area">
+            <button class="btn btn-print" onclick="window.print()">Print</button>
+
+            <a href="export_excel.php?start=<?= $start ?>&end=<?= $end ?>">
+                <button type="button" class="btn btn-excel">Export Excel</button>
+            </a>
+        </div>
 
         <div style="width: 100%; height: 320px; margin: 20px auto;">
             <canvas id="myChart"></canvas>
         </div>
 
-
-
         <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
         <script>
             const ctx = document.getElementById('myChart');
 
@@ -105,6 +152,8 @@ $info = mysqli_fetch_assoc(mysqli_query($conn, $query_info));
                     }]
                 },
                 options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
                     scales: {
                         y: {
                             beginAtZero: true
@@ -113,17 +162,15 @@ $info = mysqli_fetch_assoc(mysqli_query($conn, $query_info));
                 }
             });
         </script>
-        <table border="1" cellpadding="6" cellspacing="0" style="width: 60%; margin-bottom:20px;">
-            <tr style="background:#e6f2ff;">
+
+<table>
+            <tr>
                 <th>No</th>
                 <th>Total</th>
                 <th>Tanggal</th>
             </tr>
-
-            <?php
-            $no = 1;
-            foreach ($data as $row):
-            ?>
+            <?php $no = 1;
+            foreach ($data as $row): ?>
                 <tr>
                     <td><?= $no++; ?></td>
                     <td>Rp. <?= number_format($row['total'], 0, ',', '.'); ?></td>
@@ -131,20 +178,17 @@ $info = mysqli_fetch_assoc(mysqli_query($conn, $query_info));
                 </tr>
             <?php endforeach; ?>
         </table>
-        <div style="margin-top: 30px; width: 60%;">
-            <table border="1" cellpadding="8" cellspacing="0" style="width:100%; text-align:center;">
-                <tr style="background:#e6f2ff; font-weight:bold;">
-                    <th>Jumlah Pelanggan</th>
-                    <th>Jumlah Pendapatan</th>
-                </tr>
-                <tr>
-                    <td><?= $info['pelanggan'] ?> Orang</td>
-                    <td>Rp. <?= number_format($info['pendapatan'], 0, ',', '.') ?></td>
-                </tr>
-            </table>
-        </div>
 
-
+        <table>
+            <tr>
+                <th>Jumlah Pelanggan</th>
+                <th>Jumlah Pendapatan</th>
+            </tr>
+            <tr>
+                <td><?= $info['pelanggan'] ?> Orang</td>
+                <td>Rp. <?= number_format($info['pendapatan'], 0, ',', '.') ?></td>
+            </tr>
+        </table>
     </div>
 </body>
 
