@@ -10,6 +10,7 @@ if (isset($_GET['id'])) {
         $row = mysqli_fetch_assoc($result);
         $nama = $row['nama'];
         $telp = $row['telp'];
+        $email = $row['email'];
         $alamat = $row['alamat'];
     } else {
         echo "<script>alert('Data tidak ditemukan!'); window.location='read.php';</script>";
@@ -23,9 +24,10 @@ if (isset($_GET['id'])) {
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $nama = $_POST["nama"];
     $telp = $_POST["telp"];
+    $email = $_POST["email"];
     $alamat = $_POST["alamat"];
 
-    $update = "UPDATE supplier SET nama='$nama', telp='$telp', alamat='$alamat' WHERE id=$id";
+    $update = "UPDATE supplier SET nama='$nama', telp='$telp', email='$email', alamat='$alamat' WHERE id=$id";
 
     if (mysqli_query($conn, $update)) {
         echo "<script>alert('Data berhasil diperbarui!'); window.location='read.php';</script>";
@@ -62,6 +64,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <label for="telp" class="col-sm-2 col-form-label">Telp</label>
                     <div class="col-sm-10">
                         <input type="text" name="telp" id="telp" class="form-control" value="<?= htmlspecialchars($telp) ?>" required>
+                    </div>
+                </div>
+
+
+                <div class="mb-3 row">
+                    <label for="email" class="col-sm-2 col-form-label">email</label>
+                    <div class="col-sm-10">
+                        <input type="email" name="email" id="email" class="form-control" value="<?= htmlspecialchars($email) ?>" required>
                     </div>
                 </div>
 
