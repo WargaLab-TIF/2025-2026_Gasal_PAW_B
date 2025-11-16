@@ -25,7 +25,7 @@ $result = mysqli_query($conn, $query);
         }
 
         th {
-            background-color: #eee;
+            background-color: #5daad3ff;
         }
 
         .btn-edit,
@@ -50,7 +50,7 @@ $result = mysqli_query($conn, $query);
             margin-left: 630px;
             display: inline-block;
             padding: 10px 20px;
-            background-color: #007bff;
+            background-color: #1b8429ff;
             color: white;
             text-decoration: none;
             border-radius: 5px;
