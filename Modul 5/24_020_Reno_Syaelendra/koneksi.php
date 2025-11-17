@@ -3,7 +3,7 @@
 $servername = "localhost";
 $username = "root"; 
 $password = "";     
-$dbname = "database_tpp5"; 
+$dbname = "db_penjualan"; 
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 
