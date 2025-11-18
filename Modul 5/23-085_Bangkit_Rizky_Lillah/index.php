@@ -32,6 +32,7 @@ include 'koneksi.php';
                 <th>Nama</th>
                 <th>Telp</th>
                 <th>Alamat</th>
+                <th>E-mail</th>
                 <th>Tindakan</th>
             </tr>
         </thead>
@@ -46,6 +47,7 @@ include 'koneksi.php';
                 <td>{$row['nama']}</td>
                 <td>{$row['telp']}</td>
                 <td>{$row['alamat']}</td>
+                <td>{$row['email']}</td>
                 <td>
                     <a href='edit.php?id={$row['id']}' class='btn btn-warning btn-sm'>Edit</a>
                     <button onclick='hapusData({$row['id']})' class='btn btn-danger btn-sm'>Hapus</button>

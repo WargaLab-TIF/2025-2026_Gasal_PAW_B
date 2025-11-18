@@ -10,20 +10,26 @@ if (!$data) die("Data tidak ditemukan!");
 $nama = $data['nama'];
 $telp = $data['telp'];
 $alamat = $data['alamat'];
+$email = $data['email'];
 $errors = [];
+
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $nama = trim($_POST["nama"]);
     $telp = trim($_POST["telp"]);
     $alamat = trim($_POST["alamat"]);
+    $email = trim($_POST["email"]);
 
     if ($nama == "") $errors['nama'] = "Nama wajib diisi.";
     if ($telp == "") $errors['telp'] = "Nomor telepon wajib diisi.";
     elseif (!preg_match("/^[0-9]+$/", $telp)) $errors['telp'] = "Nomor telepon hanya boleh angka.";
     if ($alamat == "") $errors['alamat'] = "Alamat wajib diisi.";
+    if ($email == "") $errors['email'] = "Email wajib diisi.";
+    elseif (!preg_match("/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-z]{2,}$/", $email)) $errors['email'] = "Harus sesuai penamaan Email";
+
 
     if (empty($errors)) {
-        $query = "UPDATE supplier SET nama='$nama', telp='$telp', alamat='$alamat' WHERE id=$id";
+        $query = "UPDATE supplier SET nama='$nama', telp='$telp', alamat='$alamat', email='$email' WHERE id=$id";
         mysqli_query($koneksi, $query);
         header("Location: index.php");
         exit;
@@ -56,6 +62,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <label>Alamat</label>
             <textarea name="alamat" class="form-control"><?= htmlspecialchars($alamat) ?></textarea>
             <small class="text-danger"><?= $errors['alamat'] ?? '' ?></small>
+        </div>
+        <div class="mb-3">
+            <label>E-mail</label>
+            <input type="email" name="email" class="form-control" value="<?= $email ?>"></textarea>
+            <small class="text-danger"><?= $errors['email'] ?? '' ?></small>
         </div>
         <button type="submit" class="btn btn-primary">Update</button>
         <a href="index.php" class="btn btn-secondary">Batal</a>
