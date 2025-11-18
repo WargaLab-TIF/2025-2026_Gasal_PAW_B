@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Module 7 Reporting</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+    }
+    .container {
+        max-width: 900px;
+        margin: auto;
+    }
+    .box {
+        padding: 15px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        margin-bottom: 20px;
+        background: #fafafa;
+    }
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 10px;
+    }
+    table, th, td {
+        border: 1px solid #ccc;
+    }
+    th, td {
+        padding: 8px;
+        text-align: center;
+    }
+    button {
+        padding: 8px 14px;
+        border: none;
+        background: #007bff;
+        color: white;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-right: 10px;
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+
+    <h2>Reporting Module – Filter, Graph, Recap, Total</h2>
+
+    <!-- FILTER -->
+    <div class="box">
+        <h3>Filter</h3>
+        <label>Start Date: </label>
+        <input type="date" id="startDate">
+
+        <label style="margin-left:20px;">End Date: </label>
+        <input type="date" id="endDate">
+
+        <button onclick="applyFilter()">Search</button>
+    </div>
+
+    <!-- SEARCH RESULTS -->
+    <div class="box">
+        <h3>Search Results</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Customer</th>
+                    <th>Income</th>
+                </tr>
+            </thead>
+            <tbody id="resultTable"></tbody>
+        </table>
+    </div>
+
+
+    <!-- GRAPH -->
+    <div class="box">
+        <h3>Graph (Chart.js)</h3>
+        <canvas id="incomeChart"></canvas>
+    </div>
+
+    <!-- RECAP -->
+    <div class="box">
+        <h3>Recap</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Total Income</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td id="totalIncome">0</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- TOTAL SECTION -->
+    <div class="box">
+        <h3>Total Summary</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Total Customers</th>
+                    <th>Total Income</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td id="totalCustomers">0</td>
+                    <td id="totalIncome2">0</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- BUTTONS -->
+    <div class="box">
+        <h3>Actions</h3>
+        <button onclick="window.print()">Print</button>
+        <button onclick="exportExcel()">Excel</button>
+        <button onclick="exportPDF()">PDF</button>
+    </div>
+
+</div>
+
+<script>
+let sampleData = [
+    {date: "2025-09-01", customer: "John", income: 150000},
+    {date: "2025-09-03", customer: "Maria", income: 200000},
+    {date: "2025-09-05", customer: "Ali", income: 175000},
+    {date: "2025-09-07", customer: "Siti", income: 220000},
+    {date: "2025-09-10", customer: "Rama", income: 180000},
+    {date: "2025-09-12", customer: "Putri", income: 250000},
+    {date: "2025-09-15", customer: "Ayu", income: 140000},
+    {date: "2025-09-20", customer: "Doni", income: 230000},
+    {date: "2025-09-22", customer: "Dewi", income: 260000},
+    {date: "2025-09-25", customer: "Zaid", income: 210000},
+
+    {date: "2025-10-01", customer: "Rahman", income: 190000},
+    {date: "2025-10-03", customer: "Khan", income: 175000},
+    {date: "2025-10-05", customer: "Hani", income: 240000},
+    {date: "2025-10-07", customer: "Putra", income: 200000},
+    {date: "2025-10-10", customer: "Riko", income: 260000},
+    {date: "2025-10-12", customer: "Yuni", income: 230000},
+    {date: "2025-10-15", customer: "Farah", income: 280000},
+    {date: "2025-10-18", customer: "Imran", income: 190000},
+    {date: "2025-10-22", customer: "Lina", income: 250000},
+    {date: "2025-10-25", customer: "Hakim", income: 220000},
+
+    {date: "2025-11-01", customer: "Sabrina", income: 210000},
+    {date: "2025-11-02", customer: "Rehan", income: 260000},
+    {date: "2025-11-05", customer: "Nina", income: 280000},
+    {date: "2025-11-08", customer: "Agus", income: 200000},
+    {date: "2025-11-10", customer: "Raihan", income: 300000},
+    {date: "2025-11-12", customer: "Budi", income: 350000},
+    {date: "2025-11-15", customer: "Mia", income: 230000},
+    {date: "2025-11-16", customer: "Tono", income: 240000},
+    {date: "2025-11-17", customer: "Kevin", income: 310000},
+    {date: "2025-11-18", customer: "Linda", income: 280000}
+];
+
+
+let chart;
+
+function applyFilter() {
+    let start = document.getElementById("startDate").value;
+    let end = document.getElementById("endDate").value;
+
+    let filtered = sampleData.filter(d => d.date >= start && d.date <= end);
+
+    // Show table results
+    let table = "";
+    filtered.forEach(d => {
+        table += `<tr><td>${d.date}</td><td>${d.customer}</td><td>${d.income}</td></tr>`;
+    });
+    document.getElementById("resultTable").innerHTML = table;
+
+    // Recap total income
+    let totalInc = filtered.reduce((s, d) => s + d.income, 0);
+    document.getElementById("totalIncome").innerText = totalInc;
+    document.getElementById("totalIncome2").innerText = totalInc;
+
+    // Total customers
+    document.getElementById("totalCustomers").innerText = filtered.length;
+
+    // Generate Graph
+    let labels = filtered.map(d => d.date);
+    let values = filtered.map(d => d.income);
+
+    if (chart) chart.destroy();
+
+    chart = new Chart(document.getElementById("incomeChart"), {
+        type: "bar",
+        data: {
+            labels: labels,
+            datasets: [{
+                label: "Income",
+                data: values
+            }]
+        }
+    });
+}
+
+function exportExcel() {
+    let csv = "Date,Customer,Income\n";
+
+    document.querySelectorAll("#resultTable tr").forEach(row => {
+        let cols = row.querySelectorAll("td");
+        csv += `${cols[0].innerText},${cols[1].innerText},${cols[2].innerText}\n`;
+    });
+
+    let blob = new Blob([csv], { type: "text/csv" });
+    let link = document.createElement("a");
+    link.href = URL.createObjectURL(blob);
+    link.download = "report.xlsx";
+    link.click();
+}
+
+function exportPDF() {
+    window.print(); // simple method
+}
+</script>
+
+</body>
+</html>
