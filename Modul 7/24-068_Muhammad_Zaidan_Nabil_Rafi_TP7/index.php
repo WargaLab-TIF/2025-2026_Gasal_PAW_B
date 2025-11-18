@@ -31,7 +31,6 @@ $totalPelanggan = 0;
 while ($r = $res->fetch_assoc()) {
     $rows[] = $r;
 
-    // FIX di sini: gunakan "." untuk gabung string, bukan "+"
     $months = ['01'=>'Jan','02'=>'Feb','03'=>'Mar','04'=>'Apr','05'=>'Mei','06'=>'Jun','07'=>'Jul','08'=>'Agu','09'=>'Sep','10'=>'Okt','11'=>'Nov','12'=>'Des'];
     $y = substr($r['sale_date'],0,4);
     $m = substr($r['sale_date'],5,2);
