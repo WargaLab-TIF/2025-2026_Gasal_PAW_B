@@ -22,7 +22,7 @@ $d = mysqli_fetch_array($data);
 
         <label class="block mb-2 text-sm font-medium">Telp</label>
         <input type="text" name="telp" value="<?= $d['telp']; ?>" class="w-full border rounded-lg p-2 mb-4 focus:ring focus:ring-blue-200" required>
-
+        
         <label class="block mb-2 text-sm font-medium">Alamat</label>
         <input type="text" name="alamat" value="<?= $d['alamat']; ?>" class="w-full border rounded-lg p-2 mb-4 focus:ring focus:ring-blue-200" required>
 
