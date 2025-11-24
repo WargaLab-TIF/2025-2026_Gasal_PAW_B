@@ -14,3 +14,4 @@ INSERT INTO `laporan_harian` (`tanggal`, `total_pendapatan`) VALUES
 ('2023-09-05', 26000),
 ('2023-09-06', 13000),
 ('2023-09-09', 13000);
+
