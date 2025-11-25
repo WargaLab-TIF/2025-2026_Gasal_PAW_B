@@ -1,0 +1,114 @@
+ 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+ 
+body {
+    background: #f4f4f4;
+    padding: 20px;
+    color: #333;
+}
+
+/* Centered container for login/register */
+/* .container {
+    max-width: 400px;
+    background: white;
+    padding: 25px;
+    margin: 40px auto;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+   
+} */
+
+
+.login_form{
+    width: 50%;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: inset;
+}
+
+/* Page Title */
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Form labels */
+label {
+    font-weight: bold;
+    
+}
+
+/* Form input fields */
+input[type="text"],
+input[type="password"],
+select {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0 15px 0;
+    border: 1px solid #bbb;
+    border-radius: 5px;
+}
+
+/* Buttons */
+button {
+    width: 100%;
+    padding: 12px;
+    background: #007bff;
+    border: none;
+    color: white;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #0056b3;
+}
+
+/* Navigation menu */
+ul {
+    list-style: none;
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+ul li {
+    background: #ffffff;
+    padding: 12px;
+    margin: 8px 0;
+    border-radius: 5px;
+    border-left: 4px solid #007bff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+ul li a {
+    text-decoration: none;
+    color: #007bff;
+}
+
+ul li:hover {
+    background: #e7f0ff;
+}
+
+/* Links */
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
