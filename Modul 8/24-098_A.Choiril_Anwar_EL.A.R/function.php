@@ -1,0 +1,24 @@
+<?php
+session_start();
+include "config.php";
+
+function checklogin ($data){
+    global $conn;
+    $username = $data['username'];
+    $password = md5($data['password']);
+
+    $query = "SELECT * FROM user WHERE username ='$username' AND password= '$password' ";
+    $result = mysqli_query($conn,$query);
+
+    if (mysqli_num_rows($result) > 0){
+        $user = mysqli_fetch_assoc($result);
+        $_SESSION['status'] = "login";
+        $_SESSION['user'] = $user['nama'];
+        $_SESSION['role'] = ($user['role'] == '1') ? 'admin' : 'user';
+        header("location: index.php");
+        exit;
+    }else { 
+        return "username dan password anda salah";
+    }
+}
+?>
