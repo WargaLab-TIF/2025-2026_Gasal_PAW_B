@@ -163,7 +163,7 @@ $info = mysqli_fetch_assoc(mysqli_query($conn, $query_info));
             });
         </script>
 
-<table>
+        <table>
             <tr>
                 <th>No</th>
                 <th>Total</th>
@@ -189,7 +189,28 @@ $info = mysqli_fetch_assoc(mysqli_query($conn, $query_info));
                 <td>Rp. <?= number_format($info['pendapatan'], 0, ',', '.') ?></td>
             </tr>
         </table>
-    </div>
+
+        <h3>rata-rata per hari</h3>
+        <table>
+            <tr>
+                <th>rata-rata</th>
+                <th>Rp. <?= number_format(array_sum($values) / count($values), 0, ',', '.') ?></th>
+            </tr>
+        </table>
+         <h3>rata-rata per hari</h3>
+        <table>
+            <tr>
+                <th>tanggal</th>
+                <th>rata-rata</th>
+            </tr>
+            <?php foreach ($data as $row): ?>
+                <tr>
+                    <td><?= date("d M Y", strtotime($row['tanggal'])); ?></td>
+                    <td>Rp. <?= number_format($row['total'], 0, ',', '.'); ?></td>
+                </tr>
+            <?php endforeach; ?>
+            <table
+                </div>
 </body>
 
 </html>

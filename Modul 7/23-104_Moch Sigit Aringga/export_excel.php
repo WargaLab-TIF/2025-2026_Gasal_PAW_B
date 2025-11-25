@@ -45,9 +45,9 @@ echo "<table border='1'>
 $no = 1;
 while ($row = mysqli_fetch_assoc($rekap)) {
     echo "<tr>
-            <td>".$no++."</td>
-            <td>".number_format($row['total'], 0, ',', '.')."</td>
-            <td>".date("d M Y", strtotime($row['tanggal']))."</td>
+            <td>" . $no++ . "</td>
+            <td>" . number_format($row['total'], 0, ',', '.') . "</td>
+            <td>" . date("d M Y", strtotime($row['tanggal'])) . "</td>
         </tr>";
 }
 
@@ -64,6 +64,6 @@ echo "<table border='1'>
         </tr>
         <tr>
             <td>{$info['pelanggan']} Orang</td>
-            <td>Rp. ".number_format($info['pendapatan'], 0, ',', '.')."</td>
+            <td>Rp. " . number_format($info['pendapatan'], 0, ',', '.') . "</td>
         </tr>
       </table>";

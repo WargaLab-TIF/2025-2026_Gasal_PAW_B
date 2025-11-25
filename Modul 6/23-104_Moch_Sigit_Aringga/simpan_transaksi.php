@@ -27,6 +27,7 @@ try {
     foreach ($items as $item) {
         $id_barang = $item['id_barang'] ?? null;
         $jumlah = (int)($item['jumlah'] ?? 0);
+        $stok = $item['stok'] ?? null;
 
         if (!$id_barang || $jumlah <= 0) {
             throw new Exception("Data barang tidak valid.");
@@ -42,12 +43,11 @@ try {
         $harga = (float)$barang['harga_satuan'];
         $subtotal = $harga * $jumlah;
         $total_transaksi += $subtotal;
-
         $validated_items[] = [
             'id_barang' => $id_barang,
             'jumlah' => $jumlah,
             'harga' => $harga,
-            'subtotal' => $subtotal
+            'subtotal' => $subtotal,
         ];
     }
 
@@ -55,6 +55,7 @@ try {
         INSERT INTO tabel_transaksi (nomor_nota, tanggal_transaksi, total_transaksi)
         VALUES (?, ?, ?)
     ");
+
     $stmtMaster->execute([$nomor_nota, $tanggal_transaksi, $total_transaksi]);
 
     $id_transaksi = $pdo->lastInsertId();
@@ -79,10 +80,9 @@ try {
 
     echo "<h1>Transaksi Berhasil!</h1>";
     echo "<p>Nomor Nota: <b>{$nomor_nota}</b></p>";
-    echo "<p>Total Transaksi: <b>Rp " . number_format($total_transaksi, 0, ',', '.') . "</b></p>";
+    echo "<p>harga total: . $total_transaksi.</p>";
     echo "<p>Data berhasil disimpan ke tabel master & detail.</p>";
     echo '<a href="form_transaksi.php">Buat Transaksi Baru</a>';
-
 } catch (Exception $e) {
     $pdo->rollBack();
 
@@ -91,4 +91,3 @@ try {
     echo "<p>Semua perubahan telah dibatalkan.</p>";
     echo '<a href="form_transaksi.php">Kembali ke Form</a>';
 }
-?>
