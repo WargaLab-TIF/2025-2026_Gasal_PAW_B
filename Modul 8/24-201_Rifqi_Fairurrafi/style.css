@@ -1,0 +1,43 @@
+.btn-green-gradient {
+    background: linear-gradient(180deg, #27d65f, #1f8a3e) !important;
+    color: white !important;
+    border: none !important;
+}
+
+.btn-green-gradient:hover {
+    opacity: 0.9 !important;
+    color: white !important;
+}
+
+.btn-orange-gradient {
+    background: linear-gradient(180deg, #ff7e00, #a75300) !important;
+    color: white !important;
+    border: none !important;
+}
+
+.btn-orange-gradient:hover {
+    opacity: 0.9 !important;
+    color: white !important;
+}
+
+.btn-red-gradient {
+    background: linear-gradient(180deg, #ec0101, #940000) !important;
+    color: white !important;
+    border: none !important;
+}
+
+.btn-red-gradient:hover {
+    opacity: 0.9 !important;
+    color: white !important;
+}
+
+.btn-blue-gradient {
+    background: linear-gradient(180deg, #42a5f5, #0077c2) !important;
+    color: white !important;
+    border: none !important;
+}
+
+.btn-blue-gradient:hover {
+    opacity: 0.9 !important;
+    color: white !important;
+}
