@@ -1,8 +1,5 @@
 <?php
 session_start();
-
-// SOAL NO 3: Proteksi Halaman
-// Jika user belum login, tendang ke halaman login
 if (!isset($_SESSION['status']) || $_SESSION['status'] != "login") {
     header("location:login.php?pesan=belum_login");
     exit;
