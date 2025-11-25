@@ -45,11 +45,11 @@ if (!isset($_SESSION['user'])) {
                 <?php if ($_SESSION['role'] === "Admin") : ?>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Data Master</a>
+                        <a class="nav-link" href="../../Modul 6/24-087_Muhammad Izzul Millah Aqil_TP6/form_transaksi.php">Data Master</a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Transaksi</a>
+                        <a class="nav-link" href="../../Modul 6/24-087_Muhammad Izzul Millah Aqil_TP6/form_transaksi.php">Transaksi</a>
                     </li>
 
                     <li class="nav-item">
@@ -59,7 +59,7 @@ if (!isset($_SESSION['user'])) {
 
                 <?php else : ?>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Transaksi</a>
+                        <a class="nav-link" href="../../Modul 6/24-087_Muhammad Izzul Millah Aqil_TP6/form_transaksi.php">Transaksi</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="../../Modul 7/24-087_Muhammad Izzul Millah Aqil_TP7/index.php">Laporan</a>
