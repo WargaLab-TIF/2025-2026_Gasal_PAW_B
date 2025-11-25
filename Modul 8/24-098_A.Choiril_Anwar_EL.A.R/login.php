@@ -13,44 +13,45 @@ if (isset($_POST['login'])) {
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Login Page</title>
-<script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body class="bg-gray-100">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
-<div class="flex justify-center items-center min-h-screen px-4">
-    <div class="w-full max-w-md bg-white shadow-xl rounded-xl p-8">
-        <div class="text-center mb-6">
-            <h3 class="text-2xl font-bold text-blue-600">Login Sistem</h3>
-            <p class="text-gray-500 text-sm">Silakan masuk untuk melanjutkan</p>
+</head>
+<body class="bg-light">
+
+<div class="container d-flex justify-content-center align-items-center min-vh-100">
+    <div class="col-md-5 bg-white p-4 rounded-4 shadow">
+
+        <div class="text-center mb-4">
+            <h3 class="fw-bold text-primary">Login Sistem</h3>
+            <p class="text-muted small">Silakan masuk untuk melanjutkan</p>
         </div>
 
         <?php if (isset($error)) : ?>
-            <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative mb-4">
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
                 <?= $error; ?>
-                <button class="absolute top-0 bottom-0 right-0 px-4 py-3" onclick="this.parentElement.style.display='none'">
-                    ✕
-                </button>
+                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
             </div>
         <?php endif; ?>
 
         <form method="POST">
+            <div class="mb-3">
+                <label for="username" class="form-label fw-semibold">Username</label>
+                <input type="text" id="username" name="username" class="form-control" required>
+            </div>
+
             <div class="mb-4">
-                <label for="username" class="block font-medium text-gray-600 mb-1">Username</label>
-                <input type="text" id="username" name="username" required
-                class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400">
+                <label for="password" class="form-label fw-semibold">Password</label>
+                <input type="password" id="password" name="password" class="form-control" required>
             </div>
-            <div class="mb-6">
-                <label for="password" class="block font-medium text-gray-600 mb-1">Password</label>
-                <input type="password" id="password" name="password" required
-                class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400">
-            </div>
-            <button type="submit" name="login"
-            class="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-lg font-semibold transition">
+
+            <button type="submit" name="login" class="btn btn-primary w-100 py-2 fw-semibold">
                 LOGIN
             </button>
         </form>
+
     </div>
 </div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
 </html>
