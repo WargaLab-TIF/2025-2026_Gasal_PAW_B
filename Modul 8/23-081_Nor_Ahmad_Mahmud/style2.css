@@ -1,0 +1,86 @@
+/* ===== NAVBAR ===== */
+nav {
+    background: #007bff;
+    padding: 12px 20px;
+    display: flex;
+    justify-content: space-between; /* kiri & kanan */
+    align-items: center; /* sejajar satu baris */
+    border-radius: 5px;
+    margin-bottom: 20px;
+    color: white;
+}
+
+/* Menu kiri */
+.nav-left a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    margin-right: 20px;
+}
+
+.nav-left a:last-child {
+    margin-right: 0;
+}
+
+.nav-left a:hover {
+    text-decoration: underline;
+    opacity: 0.85;
+}
+
+/* Nama user di kanan */
+.nav-right {
+    font-weight: bold;
+    font-size: 16px;
+    white-space: nowrap; /* supaya tidak turun */
+}
+
+/* ====== GREETING TEXT ====== */
+.welcome {
+    text-align: center;
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: #444;
+}
+
+/* ====== FOOTER (opsional) ====== */
+footer {
+    text-align: center;
+    padding: 10px;
+    margin-top: 30px;
+    color: #666;
+}
+/* ===== USER DROPDOWN ===== */
+
+.user-menu {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    color: white;
+    font-weight: bold;
+}
+
+.user-menu:hover .dropdown {
+    display: block; /* tampil ketika hover */
+}
+
+.dropdown {
+    display: none;
+    position: absolute;
+    right: 0;
+    background: white;
+    min-width: 130px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    border-radius: 5px;
+    z-index: 100;
+}
+
+.dropdown a {
+    display: block;
+    padding: 10px 15px;
+    color: #333;
+    text-decoration: none;
+}
+
+.dropdown a:hover {
+    background: #f2f2f2;
+}
