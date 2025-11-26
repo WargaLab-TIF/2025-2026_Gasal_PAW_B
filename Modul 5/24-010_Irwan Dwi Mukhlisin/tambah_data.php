@@ -1,6 +1,7 @@
 <?php
 $errors = [];
-include "koneksi.php";
+require_once "koneksi.php";
+require_once "function.php";
 if (isset($_POST['submit'])) {
     $nama = $_POST['nama'];
     $telp = $_POST['telp'];
@@ -22,28 +23,6 @@ if (isset($_POST['submit'])) {
     }
 }
 
-function validateName(&$error, $field_list, $field_name)
-{
-    $pattern = "/^[a-zA-Z'-]+$/";
-    if (!isset($field_list[$field_name]) || empty($field_list[$field_name])) {
-        $error[$field_name] = 'Nama wajib diisi';
-    } elseif (!preg_match($pattern, $field_list[$field_name]))
-        $error[$field_name] = 'Format nama tidak sesuai';
-}
-function validateTelp(&$error, $field_list, $field_name)
-{
-    $pattern = "/^[0-9]+$/";
-    if (!isset($field_list[$field_name]) || empty($field_list[$field_name])) {
-        $error[$field_name] = 'Telp wajib diisi';
-    } elseif (!preg_match($pattern, $field_list[$field_name]))
-        $error[$field_name] = 'Telp telp wajib angka';
-}
-function validateAlamat(&$error, $field_list, $field_name)
-{
-    if (trim($field_list[$field_name]) == "") {
-        $error[$field_name] = "alamat tidak boleh kosong";
-    }
-}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -60,12 +39,12 @@ function validateAlamat(&$error, $field_list, $field_name)
 </head>
 
 <body>
-    <h2>Tambah Buku</h2>
+    <h2>Tambah Data Supplier</h2>
     <table>
         <form method="POST">
             <tr>
                 <td>
-                    <label for="">Nama</label>
+                    <label for="">Nama : </label>
                 </td>
                 <td>
                     <input type="text" name="nama"
@@ -87,16 +66,28 @@ function validateAlamat(&$error, $field_list, $field_name)
                     <span><?= isset($errors['telp']) ? $errors['telp'] : '' ?></span>
                 </td>
             </tr>
+            <tr>
+                <td>
+                    <label for="">Alamat : </label>
+                </td>
+                <td>
+                    <input type="text" name="alamat"
+                        value="<?= isset($_POST['alamat']) ? htmlspecialchars($_POST['alamat']) : '' ?>">
+                </td>
+                <td>
+                    <span>
+                        <?= isset($errors['alamat']) ? $errors['alamat'] : '' ?>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <button type="submit" name="submit">Simpan</button>
+                    <a href="data.php"><button type="button">Kembali</button></a>
+                </td>
+            </tr>
 
-            Alamat: <input type="text" name="alamat"
-                value="<?= isset($_POST['alamat']) ? htmlspecialchars($_POST['alamat']) : '' ?>">
-            <span>
-                <?= isset($errors['alamat']) ? $errors['alamat'] : '' ?>
-            </span>
-            <br><br>
-
-            <button type="submit" name="submit">Simpan</button>
-            <a href="data.php"><button type="button">Kembali</button></a>
         </form>
     </table>
 </body>
