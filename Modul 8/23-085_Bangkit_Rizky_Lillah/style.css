@@ -1,0 +1,115 @@
+body {
+    background: #f5f6fa;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+.login-container { 
+    max-width: 550px; 
+    width: 100%;
+    margin-top: 100px; 
+}
+
+.dropdown-menu {
+    z-index: 9999 !important;
+}
+
+.my-navbar,
+.navbar {
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.navbar-brand {
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.nav-link {
+    font-weight: 500;
+}
+
+.nav-link:hover {
+    color: #0d6efd !important;
+}
+
+.navbar .dropdown-menu {
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.table-container {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+h3 {
+    font-weight: 600;
+}
+
+table th,
+table td {
+    vertical-align: middle;
+}
+
+.btn-success {
+    border-radius: 6px;
+}
+
+.hero {
+    background: #f4f6f9;
+    padding: 60px 20px;
+    border-bottom: 1px solid #ddd;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 36px;
+    font-weight: 700;
+}
+
+.hero p {
+    font-size: 18px;
+    margin-top: 10px;
+    color: #555;
+}
+
+.menu-box {
+    background: #fff;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    transition: 0.2s;
+    cursor: pointer;
+    text-align: center;
+}
+
+.menu-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+}
+
+.menu-box h4 {
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.menu-box p {
+    color: #555;
+}
+
+.footer {
+    margin-top: 60px;
+    padding: 15px;
+    background: #f4f4f4;
+    text-align: center;
+    border-top: 1px solid #ddd;
+}
+
+.footer p {
+    margin: 0;
+    color: #555;
+}

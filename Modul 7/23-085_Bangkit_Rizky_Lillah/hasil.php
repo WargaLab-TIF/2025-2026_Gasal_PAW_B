@@ -9,6 +9,11 @@ $query = "SELECT tanggal, SUM(jumlah) AS total_pendapatan, COUNT(*) AS total_tra
           WHERE tanggal BETWEEN '$tgl1' AND '$tgl2'
           GROUP BY tanggal ORDER BY tanggal ASC";
 
+// $e = "SELECT tanggal, AVG(jumlah) AS total_pendapatan, COUNT(*) AS total_transaksi 
+//         FROM penjualan
+//         WHERE tanggal BETWEEN '$tgl1' AND '$tgl2'
+//         GROUP BY tanggal ORDER BY tanggal ASC";
+
 $hasil = mysqli_query($conn, $query);
 
 $labels = [];
@@ -21,7 +26,7 @@ while ($row = mysqli_fetch_assoc($hasil)) {
     $labels[] = $row['tanggal'];
     $jumlah[] = $row['total_pendapatan'];
     $data[] = $row;
-
+    
     $total_semua += $row['total_pendapatan'];
     $total_pelanggan += $row['total_transaksi'];
 }
@@ -72,15 +77,32 @@ while ($row = mysqli_fetch_assoc($hasil)) {
 <table class="table table-bordered rekap-table">
     <tr>
         <th>No</th>
-        <th>Total</th>
         <th>Tanggal</th>
+        <th>Total</th>
     </tr>
 
     <?php $no=1; foreach($data as $d): ?>
     <tr>
         <td><?= $no++ ?></td>
-        <td>Rp <?= number_format($d['total_pendapatan']) ?></td>
         <td><?= date("d M Y", strtotime($d['tanggal'])) ?></td>
+        <td>Rp <?= number_format($d['total_pendapatan']) ?></td>
+    </tr>
+    <?php endforeach; ?>
+</table>
+
+<h4><b>Tabel Rata-rata Pendapatan</b></h4>
+<table class="table table-bordered rata-table">
+    <tr>
+        <th>No</th>
+        <th>Tanggal</th>
+        <th>rata-rata</th>
+    </tr>
+
+    <?php $no=1; foreach($data as $e): ?>
+    <tr>
+        <td><?= $no++ ?></td>
+        <td><?= date("d M Y", strtotime($e['tanggal'])) ?></td>
+        <td>Rp <?= number_format($e['rata_pendapatan']) ?></td>
     </tr>
     <?php endforeach; ?>
 </table>
