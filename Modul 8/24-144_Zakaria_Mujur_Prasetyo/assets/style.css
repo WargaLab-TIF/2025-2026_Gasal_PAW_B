@@ -1,0 +1,351 @@
+/* Perbaiki kurung kurawal body + pindahkan selector img keluar body */
+* {
+  box-sizing: border-box
+}
+
+html,
+body {
+  height: 100%
+}
+
+body {
+  margin: 0;
+  font-family: "Arial";
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: #333;
+  background: #fff;
+}
+
+img {
+  max-width: 100%;
+  height: auto
+}
+
+/* Container & helpers */
+.wadah {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 10px 15px
+}
+
+.jarak {
+  padding-top: 20px;
+  padding-bottom: 20px
+}
+
+.flex {
+  display: flex
+}
+
+.antara {
+  justify-content: space-between
+}
+
+.sejajar {
+  align-items: center
+}
+
+.celah2>*+* {
+  margin-left: 8px
+}
+
+.bawah0 {
+  margin-bottom: 0
+}
+
+.bawah3 {
+  margin-bottom: 12px
+}
+
+.tengah {
+  text-align: center
+}
+
+.redup {
+  color: #777
+}
+
+.bgputih {
+  background: #fff
+}
+
+.garisbawah {
+  border-bottom: 1px solid #e5e5e5
+}
+
+.tengahvert td,
+.tengahvert th {
+  vertical-align: middle
+}
+
+/* Judul biru  */
+.judul-biru {
+  font-size: 28px;
+  font-weight: 500;
+  color: #337ab7;
+  margin: 10px 0 12px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+/* Link judul pada navbar kecil */
+.merek {
+  font-size: 18px;
+  font-weight: 600;
+  color: #337ab7;
+  text-decoration: none
+}
+
+.merek:hover {
+  text-decoration: underline;
+}
+
+.isi {
+  padding: 12px
+}
+
+/* Flash */
+.pesan {
+  border: 1px solid transparent;
+  border-radius: 4px;
+  padding: 10px 12px;
+  margin: 10px 0 16px
+}
+
+.pesanok {
+  background: #dff0d8;
+  border-color: #d6e9c6;
+  color: #3c763d
+}
+
+.pesanerr {
+  background: #f2dede;
+  border-color: #ebccd1;
+  color: #a94442
+}
+
+/* Tombol */
+.tombol {
+  display: inline-block;
+  appearance: none;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  padding: 6px 12px;
+  font-weight: 600;
+  color: #fff;
+  text-decoration: none;
+  line-height: 1.42857143;
+  cursor: pointer;
+  user-select: none
+}
+
+.tombol:hover {
+  filter: brightness(.98)
+}
+
+.tombol:active {
+  transform: translateY(1px)
+}
+
+.tombol.kecil {
+  padding: 6px 12px;
+  font-size: 14px
+}
+
+.tombol.sukses {
+  background: linear-gradient(#5cb85c, #4cae4c);
+  border-color: #4cae4c
+}
+
+.tombol.bahaya {
+  background: linear-gradient(#d9534f, #c9302c);
+  border-color: #c9302c
+}
+
+.tombol.awas {
+  background: linear-gradient(#f0ad4e, #eea236);
+  border-color: #eea236
+}
+
+/* Tabel daftar */
+.tabelres {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch
+}
+
+.tabel {
+  width: 100%;
+  border-collapse: collapse;
+  background: #00aaff
+}
+
+.tabel thead th {
+  background: #00aaff;
+  border-bottom: 2px solid #00aaff;
+  color: #333;
+  font-weight: 600;
+  padding: 8px 10px
+}
+
+.tabel tbody td {
+  padding: 8px 10px;
+  border-top: 1px solid #ddd;
+  background: #fff
+}
+
+.tabel th:first-child,
+.tabel td:first-child {
+  text-align: center
+}
+
+/* Form Vertikal */
+.label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 700;
+  color: #333;
+  text-align: left
+}
+
+.bawah3 .input {
+  display: block;
+  width: 100%;
+  height: 34px;
+  padding: 6px 12px;
+  border: 0px solid #ccc;
+  border-radius: 4px;
+  outline: 0;
+  background: #fff;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075)
+}
+
+.bawah3 .input:focus {
+  border-color: #66afe9;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(0, 140, 255, 0.6)
+}
+
+/* Tambahan untuk Login & Navbar */
+.tombol-biru {
+  background: #00aaff;
+  border: 1px solid #0099cc;
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+}
+
+.tombol-biru:hover {
+  background: #0088cc;
+}
+
+.login-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f0f0f0;
+}
+
+.login-box {
+  width: 100%;
+  max-width: 400px;
+  background: #fff;
+  padding: 30px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Navbar Sederhana */
+.navbar {
+  background-color: #003366;
+  /* Dark blue like in the image */
+  color: #fff;
+  padding: 10px 0;
+}
+
+.navbar .wadah {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-brand {
+  font-size: 20px;
+  font-weight: bold;
+  color: #fff;
+  text-decoration: none;
+  margin-right: 20px;
+}
+
+.navbar-menu {
+  display: flex;
+  gap: 20px;
+}
+
+.navbar-menu a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.navbar-menu a:hover {
+  text-decoration: underline;
+}
+
+.navbar-user {
+  font-weight: bold;
+}
+
+/* Dropdown Styles */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  border-radius: 4px;
+}
+
+.dropdown-content a {
+  color: #333;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  font-weight: normal;
+}
+
+.dropdown-content a:hover {
+  background-color: #f1f1f1;
+  text-decoration: none;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Positioning for specific dropdowns */
+.dropdown-menu-right {
+  right: 0;
+  left: auto;
+}
+
+.dropdown-menu-left {
+  left: 0;
+  right: auto;
+}
+
+/* Navbar Link styling within dropdown trigger */
+.dropdown>a {
+  color: #fff;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
