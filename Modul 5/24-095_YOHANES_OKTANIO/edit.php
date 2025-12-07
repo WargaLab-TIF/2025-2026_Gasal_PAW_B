@@ -1,0 +1,96 @@
+<?php
+require_once 'koneksi.php';
+
+
+function clearText($text) {
+    return htmlspecialchars(stripslashes(trim($text)));
+}
+
+$id = clearText( $_GET['id']);
+
+$SQL = "SELECT * FROM supplier WHERE id=$id";
+$result = mysqli_query($conn, $SQL);
+$result = $result->fetch_all(MYSQLI_ASSOC)[0]; 
+if ($_SERVER['REQUEST_METHOD'] == "POST")  {
+    $errors = array();
+    $nama = isset($_POST['nama']) ? clearText($_POST['nama']) : "";
+    $telp = isset($_POST['telp']) ? clearText($_POST['telp']) : "";
+    $alamat = isset($_POST['alamat']) ? clearText($_POST['alamat']) : "";
+    if (!$nama || !$telp || !$alamat ) {
+        $errors[] = "Pastikan Mengisi Semua Data";
+    }
+    $regex = "/^(\+62|08)/";
+    if (!preg_match($regex, $telp)) {
+        $errors[] = "Nomor Telepon Tidak Sesuai ( ID )";
+    }
+
+    if ($errors != []) {
+        foreach ($errors as $error) {
+            echo "<p style='color:red;'>$error</p>" ;
+        }
+    } else {
+        $SQL = "UPDATE supplier SET nama=?, telp=?, alamat=? WHERE id=?";
+        $stmp = $conn->prepare($SQL);
+        $stmp->bind_param("sssi",$nama,$telp,$alamat,$id);
+        $stmp->execute();
+        header("Location: index.php");
+    }
+}
+
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="colors_agak_mirip.css">
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        span {
+            display: inline-block;
+            width: 100px;
+            text-align: right;
+        }
+        input {
+            margin-right: 50px;
+        }
+    </style >
+</head>
+
+<body>
+    <div class="header">
+        <h1 style="color: var(--primary-text);">Edit Data Master Supplier</h1>
+    </div>
+    <div style="display: flex; justify-content: center;">
+        <form action="" method="post">
+            <div class="">
+                <label for="nama"><span>Nama</span></label>
+                <input type="text" name="nama" id="nama" placeholder="Nama" value="<?=$result['nama'] ?>">
+            </div>
+            <div class="">
+                <label for="telp"><span>Telp</span></label>
+                <input type="text" name="telp" id="telp" placeholder="Telp" value="<?=$result['telp'] ?>">
+            </div>
+            <div class="">
+                <label for="alamat"><span>Alamat</span></label>
+                <input type="text" name="alamat" id="alamat" placeholder="Alamat" value="<?=$result['alamat'] ?>">
+            </div>
+            <div class="">
+                <span></span>
+    <button class="btn btn-green">Update</button>
+
+    <a href="index.php" class="btn btn-red">Batal</a>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>
