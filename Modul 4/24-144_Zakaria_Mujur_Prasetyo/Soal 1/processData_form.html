@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Register Form</title>
+  </head>
+  <body>
+    <h2>Register</h2>
+    <fieldset>
+      <legend>Person Details</legend>
+      <form name="myForm" action="processData.php" method="POST">
+        <label>Surname:</label>
+        <input type="text" name="surname" /><br />
+
+        <label>Email address:</label>
+        <input type="email" name="email" /><br />
+        <label>Password:</label>
+        <input type="password" name="password" /><br />
+
+        <label>Street Address:</label><br />
+        <textarea name="address" rows="3"></textarea><br />
+
+        <label>State:</label>
+        <select name="state">
+          <option value="">--Choose your state--</option>
+          <option value="1">Gresik</option>
+          <option value="2">Madura</option>
+          <option value="3">Mojokerto</option>
+          <option value="4">Lamongan</option></select
+        ><br />
+
+        <input type="hidden" name="country" value="JawaTimur" />
+
+        <label>Gender:</label>
+        <input type="radio" name="gender" value="Male" /> Male
+        <input type="radio" name="gender" value="Female" /> Female<br />
+
+        <label>Teknik Informatika?</label>
+        <input type="checkbox" name="teknik_informatika" value="Yes" /><br />
+
+        <input type="submit" name="submit" value="Submit" />
+        <input type="reset" name="reset" value="Reset" />
+      </form>
+    </fieldset>
+  </body>
+</html>

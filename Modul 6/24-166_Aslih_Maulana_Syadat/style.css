@@ -1,0 +1,134 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background-color: lightgray;
+    color: darkslategray;
+}
+
+.container, .nota-container {
+    max-width: 900px;
+    margin: 20px auto;
+    background-color: white;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    text-align: center;
+    border-bottom: 2px solid lightgray;
+    padding-bottom: 10px;
+    margin-top: 0;
+}
+
+/* Styling Form */
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-group select,
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid lightgray;
+    border-radius: 4px;
+}
+
+/* Styling Tabel */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+th, td {
+    border: 1px solid lightgray;
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: whitesmoke;
+}
+
+td input[type="text"],
+td input[type="number"] {
+    width: 100%;
+    padding: 8px;
+}
+
+/* Tombol */
+.btn {
+    padding: 10px 15px;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn-primary { background-color: blue; }
+.btn-danger { background-color: crimson; }
+.btn-success { background-color: green; }
+
+/* Total Display */
+#total-display {
+    font-size: 1.8em;
+    font-weight: bold;
+    text-align: right;
+    margin: 20px 0;
+    color: blue;
+}
+
+/* Alert Messages */
+.alert {
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 4px;
+    border: 1px solid transparent;
+}
+
+.alert-success {
+    background-color: honeydew;
+    color: darkgreen;
+    border-color: palegreen;
+}
+
+.alert-danger {
+    background-color: mistyrose;
+    color: darkred;
+    border-color: lightcoral;
+}
+
+/* Styling Nota */
+.nota-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.nota-info {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.nota-footer {
+    text-align: right;
+    margin-top: 20px;
+}
+
+.nota-footer div {
+    font-size: 1.1em;
+    font-weight: bold;
+    margin-bottom: 5px;
+}

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tugas Pendahuluan 4 - Form Data Pribadi</title>
+    <style>
+        body { 
+            font-family: sans-serif; 
+            margin: 20px; 
+        }
+        div { 
+            margin-bottom: 15px; 
+        }
+        label { 
+            display: block; 
+            margin-bottom: 5px; 
+            font-weight: bold; 
+        }
+        input[type="text"], input[type="email"], input[type="password"], textarea, select {
+            width: 300px;
+            padding: 8px;
+            box-sizing: border-box;
+        }
+        .radio-group label { 
+            display: inline; 
+            font-weight: normal; 
+            margin-right: 15px; 
+        }
+        .checkbox-group label { 
+            display: inline; 
+            font-weight: normal; 
+        }
+        .buttons { 
+            margin-top: 20px; 
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Formulir Data Pribadi</h2>
+    <p>Silakan isi data di bawah ini:</p>
+
+    <form action="processData.php" method="POST">
+        
+        <div>
+            <label for="surname">Surname:</label>
+            <input type="text" id="surname" name="surname">
+        </div>
+
+        <div>
+            <label for="email">Email address:</label>
+            <input type="email" id="email" name="email">
+        </div>
+
+        <div>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password">
+        </div>
+
+        <div>
+            <label for="address">Street Address:</label>
+            <textarea id="address" name="address" rows="3"></textarea>
+        </div>
+
+        <div>
+            <label for="state">State:</label>
+            <select id="state" name="state">
+                <option value="">-- Pilih State --</option>
+                <option value="id">Indonesia</option>
+                <option value="jp">Jepang</option>
+                <option value="ar">Arab Saudi</option>
+                <option value="am">Amerika</option>
+            </select>
+        </div>
+
+        <input type="hidden" name="country" value="Indonesia">
+
+        <div class="radio-group">
+            <label>Gender:</label>
+            <input type="radio" id="male" name="gender" value="Male">
+            <label for="male">Male</label>
+            <input type="radio" id="female" name="gender" value="Female">
+            <label for="female">Female</label>
+        </div>
+
+        <div class="checkbox-group">
+            <input type="checkbox" id="vegetarian" name="vegetarian" value="Yes">
+            <label for="vegetarian">Vegetarian?</label>
+        </div>
+
+        <div class="buttons">
+            <input type="submit" value="Submit">
+            <input type="reset" value="Reset">
+        </div>
+
+    </form>
+
+</body>
+</html>

@@ -1,0 +1,53 @@
+body {
+            background: #7070e7;
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            width: 100%;
+            border: 1px solid #ccc;
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 15px;
+        }
+        fieldset {
+            border: 1px solid #ccc;
+            padding: 15px;
+            margin-bottom: 15px;
+            background: #e6e6fa; 
+        }
+        legend {
+            font-weight: bold;
+            padding: 0 10px; 
+        }
+        .field {
+            margin-bottom: 3px;
+        }
+        label {
+            display: inline-block;
+            width: 120px;
+            margin-right: 10px;
+        }
+        input[type="text"],
+        input[type="password"],
+        textarea,
+        select {
+            width: 250px;
+            padding: 3px;
+        }
+        textarea {
+            height: 50px;
+        }
+        input[type="radio"],
+        input[type="checkbox"] {
+            margin: 0 3px;
+        }
+        input[type="submit"],
+        input[type="reset"] {
+            margin-right: 5px;
+            padding: 3px 10px;
+        }
+    

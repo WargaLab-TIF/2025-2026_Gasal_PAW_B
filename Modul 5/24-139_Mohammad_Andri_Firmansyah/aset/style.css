@@ -1,0 +1,165 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/*BODY*/
+body {
+    background-color: #f4f7fc;
+}
+
+/*JUDUL*/
+
+.header{
+    background-color: blue;
+    height: 50px;
+}
+
+.judul {
+    color: #007bff;
+}
+
+.judul h2 {
+    font-size: 25px;
+}
+
+.tambah {
+    display: flex;
+    justify-content: flex-end; 
+    margin-bottom: 10px; 
+    margin-right: 40px;
+}
+
+
+/*TABEL DATA*/
+table {
+    margin: 0 auto;
+    border: 1px solid;
+    border-collapse: collapse;
+    width: 95%;
+    background: white;
+    border-radius: 6px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    margin-bottom: 25px;
+    align-content: left;
+}
+
+th, td {
+    border: 1px solid #000000;
+    padding: 5px;
+    text-align: left;
+}
+
+th {
+    background-color: #bcdcff;
+    color: black;
+    font-weight: 600;
+}
+
+/*TOMBOL*/
+.btn {
+    border: none;
+    padding: 7px 14px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+
+.btn-tambah, 
+.btn-update,
+.btn-simpan {
+    background-color: #00d331;
+    color: white;
+    padding: 10px;
+}
+
+.btn-tambah:hover,
+.btn-update:hover,
+.btn-simpan:hover {
+    background-color: #00700f;
+}
+
+.btn-edit {
+    background-color: #ff6600;
+    color: white;
+}
+
+.btn-edit:hover {
+    background-color: #a36200;
+}
+
+.btn-hapus, .btn-batal {
+    background-color: #db0117;
+    color: white;
+}
+
+.btn-hapus:hover,
+.btn-batal:hover {
+    background-color: #690000;
+}
+
+
+/*FORM TAMBAH / EDIT*/
+.inputan {
+    background: white;
+    padding: 25px;
+    border-radius: 6px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    width: 400px;
+    margin-left: 50px;
+}
+
+.inputan div {
+    margin-bottom: 18px;
+}
+
+label {
+    font-weight: 600;
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 8px 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    transition: border-color 0.2s;
+}
+
+input[type="text"]:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+/*TOMBOL DI FORM*/
+.tombol {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.tombol .btn {
+    width: 100px;
+    text-align: center;
+}
+
+/*PESAN*/
+
+.errors {
+    color: red;
+    font-weight: 500;
+}
+
+.sukses {
+    text-align: center;
+    font-weight: 500;
+    font-size: 20px;
+    color: rgb(1, 212, 1);
+}
+
+
