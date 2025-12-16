@@ -32,6 +32,7 @@ $result = mysqli_query($conn, $sql);
                             <th style="width: 5%;">No</th>
                             <th>Nama</th>
                             <th>Telp</th>
+                            <th>email</th>
                             <th>Alamat</th>
                             <th style="width: 20%;">Tindakan</th>
                         </tr>
@@ -45,6 +46,7 @@ $result = mysqli_query($conn, $sql);
                                 echo "<td>{$no}</td>";
                                 echo "<td>" . htmlspecialchars($row["nama"]) . "</td>";
                                 echo "<td>" . htmlspecialchars($row["telp"]) . "</td>";
+                                echo "<td>" . htmlspecialchars($row["email"]) . "</td>";
                                 echo "<td>" . htmlspecialchars($row["alamat"]) . "</td>";
                                 echo "<td>
                                         <a href='update.php?id=" . $row["id"] . "' class='btn btn-warning btn-sm me-1'>Edit</a>
